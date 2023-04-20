@@ -3,5 +3,6 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/</item>
         <item>@font/aguafina_script</item>
+        <item>@font/anton</item>
     </array>
 </resources>

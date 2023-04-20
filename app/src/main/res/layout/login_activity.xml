@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="256dp"
+        android:layout_height="281dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/user_login_icon" />
+
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_width="248dp"
+        android:layout_height="123dp"
+        android:fontFamily="@font/anton"
+        android:text="Introdu mai jos datele de autentificare:"
+        android:textAlignment="center"
+        android:textColor="#1866A5"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_logo"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <EditText
+        android:id="@+id/emailTextBox"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="298dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="48dp"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_text"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordTextBox"
+        android:layout_width="298dp"
+        android:layout_height="59dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_text"
+        app:passwordToggleEnabled="true">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Parola"
+            android:inputType="textPassword" />
+
+        >
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/backToAuth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:backgroundTintMode="multiply"
+        android:text="Înapoi"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextBox"
+        app:layout_constraintVertical_bias="0.831" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="191dp"
+        android:layout_height="54dp"
+        android:text="Accesează contul!"
+        app:layout_constraintBottom_toTopOf="@+id/backToAuth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextBox" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
