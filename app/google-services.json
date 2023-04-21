@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "454253830039",
+    "project_id": "blocad",
+    "storage_bucket": "blocad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454253830039:android:3ffccf38f6d6a9f3fdeed2",
+        "android_client_info": {
+          "package_name": "com.example.blocad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454253830039-i1201eqv7969222mfaarf6qle9mfeac2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn7B9GNJ-K74cQNQiX8HNZsSNVhMJNERQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454253830039-i1201eqv7969222mfaarf6qle9mfeac2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
