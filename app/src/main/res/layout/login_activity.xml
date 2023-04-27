@@ -17,6 +17,18 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/user_login_icon" />
 
+    <ProgressBar
+        android:id="@+id/progressBarLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681" />
+
     <TextView
         android:id="@+id/login_text"
         android:layout_width="248dp"
@@ -32,6 +44,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_logo"
         app:layout_constraintVertical_bias="0.054" />
+
 
     <EditText
         android:id="@+id/emailTextBoxLogin"
@@ -49,29 +62,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_text"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordTextBoxLogin"
-        android:layout_width="298dp"
-        android:layout_height="59dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_text"
-        app:passwordToggleEnabled="true">
-
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Parola"
-            android:inputType="textPassword" />
-
-        >
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintVertical_bias="0.053" />
 
     <Button
         android:id="@+id/backToAuthLogin"
@@ -97,6 +88,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordTextBoxLogin" />
+
+    <EditText
+        android:id="@+id/passwordTextBoxLogin"
+        android:layout_width="298dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="Parola"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextBoxLogin"
+        app:layout_constraintVertical_bias="0.02" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,18 @@
         app:layout_constraintVertical_bias="0.079"
         app:srcCompat="@drawable/pngwing_com" />
 
+    <ProgressBar
+        android:id="@+id/progressBarRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.775" />
+
     <TextView
         android:id="@+id/registerText"
         android:layout_width="wrap_content"
@@ -46,28 +58,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerText"
         app:layout_constraintVertical_bias="0.069" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordTextBoxRegister"
-        android:layout_width="298dp"
-        android:layout_height="59dp"
-        app:layout_constraintBottom_toTopOf="@+id/confirmPassTextBox"
-
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextBoxRegister"
-        app:passwordToggleEnabled="true">
-
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Parola"
-            android:inputType="textPassword" />
-
-        >
-    </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
         android:id="@+id/confirmPassTextBox"
@@ -103,4 +93,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmPassTextBox" />
+
+    <EditText
+        android:id="@+id/passwordTextBoxRegister"
+        android:layout_width="298dp"
+        android:layout_height="59dp"
+        android:ems="10"
+        android:hint="Parola"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/confirmPassTextBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextBoxRegister" />
 </androidx.constraintlayout.widget.ConstraintLayout>
