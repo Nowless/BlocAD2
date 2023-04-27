@@ -29,10 +29,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.681" />
 
+
     <TextView
         android:id="@+id/login_text"
-        android:layout_width="248dp"
-        android:layout_height="123dp"
+        android:layout_width="252dp"
+        android:layout_height="113dp"
         android:fontFamily="@font/anton"
         android:text="Introdu mai jos datele de autentificare:"
         android:textAlignment="center"
@@ -43,8 +44,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_logo"
-        app:layout_constraintVertical_bias="0.054" />
-
+        app:layout_constraintVertical_bias="0.056" />
 
     <EditText
         android:id="@+id/emailTextBoxLogin"

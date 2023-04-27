@@ -16,6 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.blocad.MainActivity;
+import com.example.blocad.ProfilePages.CompleteProfileActivtiy;
 import com.example.blocad.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,7 +24,11 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -34,17 +39,21 @@ public class RegisterActivity extends AppCompatActivity {
     Button buttonReg;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
+    FirebaseFirestore fStore;
+    FirebaseUser mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_activity);
+
         mAuth = FirebaseAuth.getInstance();
         editTextEmail = findViewById(R.id.emailTextBoxRegister);
         editTextPassword = findViewById(R.id.passwordTextBoxRegister);
         ediTextConfirmPass = findViewById(R.id.confirmPassTextBox);
         buttonReg = findViewById(R.id.createAccButton);
         progressBar = findViewById(R.id.progressBarRegister);
+        fStore = FirebaseFirestore.getInstance();
         final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"; // vom folosi acest string pentru a verifica validitatea emailul
         final String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{6,}$";
 
@@ -58,6 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
                 confirmPass = String.valueOf(ediTextConfirmPass.getText());
 
                 progressBar.setVisibility(View.VISIBLE);
+
 
 
                 //verificam daca casuta de email este goala
@@ -113,12 +123,28 @@ public class RegisterActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
+
+                                    mUser = mAuth.getCurrentUser();
+                                    DocumentReference df = fStore.collection("Users").document(mUser.getUid());
+
+                                    Map<String,Object> userInfo = new HashMap<>();
+
+                                    userInfo.put("userEmail", email);
+                                    userInfo.put("isUser", 0);
+
+                                    df.set(userInfo);
+
                                     Toast.makeText(RegisterActivity.this, "Cont creat cu succes!",
                                             Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+
                                     editTextEmail.getText().clear();
                                     ediTextConfirmPass.getText().clear();
                                     editTextPassword.getText().clear();
+
+                                    Intent startCompleteProfile = new Intent(getApplicationContext(), CompleteProfileActivtiy.class);
+                                    startActivity(startCompleteProfile);
+                                    finish();  //schimbam meniul
+
 
                                 } else {
                                     progressBar.setVisibility(View.GONE);
@@ -136,7 +162,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    // modulul de trimitere inapoi la meniul de autentificare
+    // metoda de trimitere inapoi la meniul de autentificare
     private void toAuth() {
         Button backToAuthButton = (Button) findViewById(R.id.backToAuthRegister);
         backToAuthButton.setOnClickListener(new View.OnClickListener() {

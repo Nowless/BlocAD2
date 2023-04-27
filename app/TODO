@@ -1,0 +1,27 @@
+// TODO: verificare daca userul si-a completat procesul de completare a datelor
+    // TODO: terminare incarcare in baza de date a datelor + design + restul campurilor (nume, prenume, oras)
+    // TODO: rezolvare sa nu poata treaca de la complete la main
+    // TODO: gandire sistem de atribuire a apartamentului(in caz de user) si a scarii de bloc (in cazul adminilor)
+    // TODO: Side menu obligatoriu maine
+    // TODO: Dupa ce completeaza profilul -> main acitvity care sa aiba side menu cu: acasa, setari si profil
+
+
+    la inregistrare, fiecare user va primi in document un field numit "contor apa" care va fi 0 si va fi setat de administrator
+    de asemenea, in functie de scara sau blocul in care acesta va fi arondat, o sa i se adauge field-uri cu cheltuilile cuvenite: intretinere, etc
+    in fiecare data de 1, acesta va primi o notificare prin care i se va cere sa transmita index-ul si va fi informat in legatura cu platile pe care trebuie sa le fac
+    daca un user se inregistreaza inainte de 1, acestuia i se va calcula partial costul de intretinere, spre exemplu, la apa, unde platesti cat cosnumi
+
+    adminii vor putea vedea datele fiecarui utilizator
+    vor putea seta preturile pentru intretinere, apa, etc
+    vor putea atribui costuri suplimentare si pe durata(o luna, 2 luni, nedeterminat, etc)
+    vor putea posta anunturi
+    acestia vor trebui sa calculeze restantele
+    platile, deocamdata, raman offline
+
+    cu un model bun de afaceri, administratorii aplicatiei pot deveni usor si administratorii blocului respectiv.
+
+
+    Sistem distribuire:
+    1. dupa completarea datelor profilului, pe meniul de main userului i se va cere un cod unic
+    2. administratorul blocului va primi functia de admin de la adminii aplicatiei
+

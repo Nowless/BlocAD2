@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
+
+        <activity
+            android:name=".ProfilePages.CompleteProfileActivtiy"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <activity
             android:name=".AuthPages.RegisterActivity"
             android:exported="false">
@@ -19,6 +28,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".LoadPage.SplashScreenActivity"
             android:exported="true"
@@ -33,6 +43,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".AuthPages.LoginActivity"
             android:exported="false">
@@ -40,6 +51,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".AuthPages.AuthActivity"
             android:exported="true">
@@ -47,6 +59,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="false">

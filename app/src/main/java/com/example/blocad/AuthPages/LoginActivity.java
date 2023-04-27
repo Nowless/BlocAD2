@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.blocad.MainActivity;
+import com.example.blocad.ProfilePages.CompleteProfileActivtiy;
 import com.example.blocad.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,6 +25,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.FirebaseUserMetadata;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -84,9 +86,23 @@ public class LoginActivity extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Toast.makeText(LoginActivity.this, "Autentificare reusita!",
                                             Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                    startActivity(intent);
-                                    finish();
+
+                                    Intent startMainMenu = new Intent(getApplicationContext(), MainActivity.class); // creem un intent care sa porneasca un alt meniu
+                                    Intent startCompleteProfile = new Intent(getApplicationContext(), CompleteProfileActivtiy.class);
+
+                                    boolean isNew = task.getResult().getAdditionalUserInfo().isNewUser();
+                                    Log.d("MyTAG", "onComplete: " + (isNew ? "new user" : "old user"));
+
+                                    if(isNew) {
+                                        startActivity(startCompleteProfile); // pornim un alt meniu
+                                        finish();
+                                    }
+                                    else {
+                                        startActivity(startMainMenu);
+                                        finish();
+                                    }
+
+
                                 } else {
                                     progressBar.setVisibility(View.GONE);
                                     Toast.makeText(LoginActivity.this, "Autentificare esuata! Contul introdus nu exista. Verifica din nou datele!",
@@ -100,7 +116,7 @@ public class LoginActivity extends AppCompatActivity {
         toAuth(); // trimite utilizatorul inapoi la meniul de autentificare
     }
 
-    // modulul de trimitere inapoi la meniul de autentificare
+    // metoda de trimitere inapoi la meniul de autentificare
     private void toAuth() {
         Button backToAuthButton = (Button) findViewById(R.id.backToAuthLogin);
         backToAuthButton.setOnClickListener(new View.OnClickListener() {
