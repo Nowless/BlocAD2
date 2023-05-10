@@ -12,9 +12,10 @@
         android:layout_height="299dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079"
+        app:layout_constraintVertical_bias="0.028"
         app:srcCompat="@drawable/pngwing_com" />
 
     <ProgressBar
@@ -68,8 +69,10 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextBoxRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/emailTextBoxRegister"
+        app:layout_constraintVertical_bias="0.314" />
 
     <Button
         android:id="@+id/backToAuthRegister"
@@ -82,7 +85,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmPassTextBox"
-        app:layout_constraintVertical_bias="0.902" />
+        app:layout_constraintVertical_bias="0.585" />
 
     <Button
         android:id="@+id/createAccButton"
@@ -103,6 +106,18 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/confirmPassTextBox"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextBoxRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/emailTextBoxRegister"
+        app:layout_constraintVertical_bias="0.22" />
+
+    <CheckBox
+        android:id="@+id/termsCheckBoxRegister"
+        android:layout_width="344dp"
+        android:layout_height="38dp"
+        android:text="Declar ca sunt de-acord cu termenii si conditiile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backToAuthRegister" />
 </androidx.constraintlayout.widget.ConstraintLayout>

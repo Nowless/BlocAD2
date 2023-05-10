@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BlocAD</string>
+
+    <string-array name="cities">
+        <item>Turda</item>
+        <item>Campia Turzii</item>
+        <item>Cluj Napoca</item>
+    </string-array>
+
 </resources>

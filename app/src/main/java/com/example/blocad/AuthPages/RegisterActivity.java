@@ -1,26 +1,22 @@
 package com.example.blocad.AuthPages;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.blocad.MainActivity;
 import com.example.blocad.ProfilePages.CompleteProfileActivtiy;
 import com.example.blocad.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,18 +25,16 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
-
-    EditText editTextPassword;
-    EditText editTextEmail,ediTextConfirmPass;
+    EditText editTextPassword,editTextEmail,ediTextConfirmPass;
     Button buttonReg;
+    CheckBox termsCheck;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
-    FirebaseFirestore fStore;
     FirebaseUser mUser;
+    FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +42,23 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.register_activity);
 
         mAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+
         editTextEmail = findViewById(R.id.emailTextBoxRegister);
         editTextPassword = findViewById(R.id.passwordTextBoxRegister);
         ediTextConfirmPass = findViewById(R.id.confirmPassTextBox);
+
         buttonReg = findViewById(R.id.createAccButton);
+
         progressBar = findViewById(R.id.progressBarRegister);
-        fStore = FirebaseFirestore.getInstance();
-        final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"; // vom folosi acest string pentru a verifica validitatea emailul
-        final String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{6,}$";
+
+        termsCheck = findViewById(R.id.termsCheckBoxRegister);
+
+
+        final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"; // vom folosi acest string pentru a verifica veridicitatea emailul
+        final String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{6,}$"; // vom folosi acest string pentru a verifica daca parola respecta un format sigur
+
+
 
 
         buttonReg.setOnClickListener(new View.OnClickListener() {
@@ -67,8 +70,6 @@ public class RegisterActivity extends AppCompatActivity {
                 confirmPass = String.valueOf(ediTextConfirmPass.getText());
 
                 progressBar.setVisibility(View.VISIBLE);
-
-
 
                 //verificam daca casuta de email este goala
                 if(TextUtils.isEmpty(email)){
@@ -115,6 +116,13 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
+                //verificam termenii si conditiile
+                if(!termsCheck.isChecked())
+                {
+                        Toast.makeText(getApplicationContext(),"Pentru a creea un cont, trebuie sa fi de-acord cu termenii si condtiile", Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.GONE);
+                        return;
+                }
 
 
                 mAuth.createUserWithEmailAndPassword(email, password)
@@ -125,14 +133,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
 
                                     mUser = mAuth.getCurrentUser();
-                                    DocumentReference df = fStore.collection("Users").document(mUser.getUid());
-
-                                    Map<String,Object> userInfo = new HashMap<>();
-
-                                    userInfo.put("userEmail", email);
-                                    userInfo.put("isUser", 0);
-
-                                    df.set(userInfo);
 
                                     Toast.makeText(RegisterActivity.this, "Cont creat cu succes!",
                                             Toast.LENGTH_SHORT).show();
@@ -140,6 +140,14 @@ public class RegisterActivity extends AppCompatActivity {
                                     editTextEmail.getText().clear();
                                     ediTextConfirmPass.getText().clear();
                                     editTextPassword.getText().clear();
+
+                                    DocumentReference df = fStore.collection("Users").document(mUser.getUid()); // legatura cu baza de date si colectia
+
+                                    Map<String,Object> userInfo = new HashMap<>(); // string-u de bagat in baza de date
+
+                                    userInfo.put("completeProfile", "F");
+
+                                    df.set(userInfo);
 
                                     Intent startCompleteProfile = new Intent(getApplicationContext(), CompleteProfileActivtiy.class);
                                     startActivity(startCompleteProfile);

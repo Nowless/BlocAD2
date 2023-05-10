@@ -1,7 +1,5 @@
 package com.example.blocad.AuthPages;
 
-import static android.content.ContentValues.TAG;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,17 +13,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.blocad.MainActivity;
+import com.example.blocad.MainPages.MainPageActivity;
 import com.example.blocad.ProfilePages.CompleteProfileActivtiy;
 import com.example.blocad.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.FirebaseUserMetadata;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -87,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.makeText(LoginActivity.this, "Autentificare reusita!",
                                             Toast.LENGTH_SHORT).show();
 
-                                    Intent startMainMenu = new Intent(getApplicationContext(), MainActivity.class); // creem un intent care sa porneasca un alt meniu
+                                    Intent startMainMenu = new Intent(getApplicationContext(), MainPageActivity.class); // creem un intent care sa porneasca un alt meniu
                                     Intent startCompleteProfile = new Intent(getApplicationContext(), CompleteProfileActivtiy.class);
 
                                     boolean isNew = task.getResult().getAdditionalUserInfo().isNewUser();

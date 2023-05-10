@@ -1,7 +1,7 @@
-// TODO: verificare daca userul si-a completat procesul de completare a datelor
-    // TODO: terminare incarcare in baza de date a datelor + design + restul campurilor (nume, prenume, oras)
-    // TODO: rezolvare sa nu poata treaca de la complete la main
-    // TODO: gandire sistem de atribuire a apartamentului(in caz de user) si a scarii de bloc (in cazul adminilor)
+    // TODO: verificare daca userul si-a completat procesul de completare a datelor - done
+    // TODO: terminare incarcare in baza de date a datelor + design + restul campurilor (nume, prenume, oras) - done
+    // TODO: rezolvare sa nu poata treaca de la complete la main - ????
+    // TODO: gandire sistem de atribuire a apartamentului(in caz de user) si a scarii de bloc (in cazul adminilor) - done
     // TODO: Side menu obligatoriu maine
     // TODO: Dupa ce completeaza profilul -> main acitvity care sa aiba side menu cu: acasa, setari si profil
 
@@ -24,4 +24,42 @@
     Sistem distribuire:
     1. dupa completarea datelor profilului, pe meniul de main userului i se va cere un cod unic
     2. administratorul blocului va primi functia de admin de la adminii aplicatiei
+
+
+    Alte:
+    1. Fiecare document de apartament va avea un ID in functie de locatie
+    2. Fiecare apartament va avea o parola
+    3. Un apartament nu poate avea mai mult de un user
+    4. User-ul va introduce parola si id-ul furnizate de admin pentru a i se atribui apartamentul
+
+
+    Altele:
+    1. Facut verificari de nume.
+    2. Afisare apartamente
+    3. Concepere sistem taxe, preturi si contorizari
+    4. Concepere sistem adaugare ap de catre admin si profilul de admin
+
+
+    posibile imbunatatiri:
+    1. Vazut cum adaug field fara sa ma chinui 10 ani
+    2. Comanda adaugare apartamente pentru a nu dura atata
+    3. Pana profilul nu e completat, nu il lasa sa faca nmk
+
+    De ce ai nevoie pentru a creea un apartament?:
+
+    adminUID -> -1
+    judet
+    oras
+    strada
+    bloc
+    number
+    scara
+    ownerUID -> -1
+    utilities -> 13
+    waterCount
+    waterCountMonth -> 0
+    water_price -> 2 (string)
+    securityKey
+
+
 

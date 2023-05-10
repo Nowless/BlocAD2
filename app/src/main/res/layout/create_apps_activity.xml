@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApartamentPages.CreateAppsActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="237dp"
+        android:layout_height="184dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047"
+        app:srcCompat="@drawable/favpng_apartment_vector_graphics_building_real_estate_property_developer" />
+
+    <EditText
+        android:id="@+id/adress"
+        android:layout_width="144dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Adresa"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.881"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.112" />
+
+    <EditText
+        android:id="@+id/appNumber"
+        android:layout_width="80dp"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:hint="Nr. Ap."
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.246" />
+
+    <EditText
+        android:id="@+id/blocNumber"
+        android:layout_width="79dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="Bloc"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.321"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.248" />
+
+    <EditText
+        android:id="@+id/scara"
+        android:layout_width="85dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:hint="Scara"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adress"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <Spinner
+        android:id="@+id/citySpinnerCreate"
+        android:layout_width="164dp"
+        android:layout_height="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/scara"
+        app:layout_constraintEnd_toStartOf="@+id/adress"
+        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.694" />
+
+    <EditText
+        android:id="@+id/postalCodeEdit"
+        android:layout_width="81dp"
+        android:layout_height="65dp"
+        android:ems="10"
+        android:hint="CodPostal"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/blocNumber"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/citySpinnerCreate"
+        app:layout_constraintVertical_bias="0.053" />
+
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Creaza!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.869" />
+
+    <Button
+        android:id="@+id/backToMain"
+        android:layout_width="115dp"
+        android:layout_height="35dp"
+        android:backgroundTint="#18DBED"
+        android:text="Inapoi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createButton" />
+
+    <EditText
+        android:id="@+id/monthlyUtilitiesEdit"
+        android:layout_width="288dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:hint="Taxa lunara utilitati per locatar"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/createButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/waterCostEdit"
+        android:layout_width="293dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:hint="Cost per metru cub de apa"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/createButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monthlyUtilitiesEdit"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <EditText
+        android:id="@+id/counterValue"
+        android:layout_width="370dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:hint="Valore actuala contor exprimata in metri cubi"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/createButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.792" />
+
+    <EditText
+        android:id="@+id/securityKeyEdit"
+        android:layout_width="240dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:hint="Cheia unica de securitate"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/createButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/counterValue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

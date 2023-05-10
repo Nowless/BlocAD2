@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainPages.MainPageActivity">
+
+    <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="160dp"
+        android:layout_height="39dp"
+        android:backgroundTint="#E44848"
+        android:text="Deconectează-te!"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
+
+    <Button
+        android:id="@+id/toAssignAppMain"
+        android:layout_width="210dp"
+        android:layout_height="34dp"
+        android:text="Adauga un apartament!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974" />
+
+    <TextView
+        android:id="@+id/helloUserMain"
+        android:layout_width="315dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/adamina"
+        android:text="Salut, @user. Apasa pe unul dintre apartamentele tale, sau pe butonul &quot;Adauga un apartament&quot;."
+        android:textAlignment="center"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.275" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="191dp"
+        android:layout_height="214dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039"
+        app:srcCompat="@drawable/pngegg" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="173dp"
+        android:layout_height="195dp"
+        app:layout_constraintBottom_toTopOf="@+id/logoutBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/helloUserMain"
+        app:layout_constraintVertical_bias="0.156"
+        app:srcCompat="@drawable/favpng_apartment_vector_graphics_building_real_estate_property_developer" />
+
+    <TextView
+        android:id="@+id/appAdressMain"
+        android:layout_width="188dp"
+        android:layout_height="74dp"
+        android:text="adresa"
+        app:layout_constraintBottom_toTopOf="@+id/toAssignAppMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/helloUserMain"
+        app:layout_constraintVertical_bias="0.121" />
+
+    <TextView
+        android:id="@+id/appOwnerNameMain"
+        android:layout_width="187dp"
+        android:layout_height="26dp"
+        android:text="propietar"
+        app:layout_constraintBottom_toTopOf="@+id/toAssignAppMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.965"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appAdressMain"
+        app:layout_constraintVertical_bias="0.016" />
+
+    <TextView
+        android:id="@+id/appWaterCountMain"
+        android:layout_width="188dp"
+        android:layout_height="28dp"
+        android:text="apa"
+        app:layout_constraintBottom_toTopOf="@+id/toAssignAppMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/appOwnerNameMain"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <TextView
+        android:id="@+id/householdsCountMain"
+        android:layout_width="187dp"
+        android:layout_height="30dp"
+        android:text="locuitori"
+        app:layout_constraintBottom_toTopOf="@+id/toAssignAppMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/appWaterCountMain"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <TextView
+        android:id="@+id/waterCountThisMonthMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introdu aici consumul de luna acesata:"
+        app:layout_constraintBottom_toTopOf="@+id/logoutBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.413" />
+
+    <TextView
+        android:id="@+id/waterPayTotalMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="total plata apa:"
+        app:layout_constraintBottom_toTopOf="@+id/logoutBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <TextView
+        android:id="@+id/utilitesPayMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="total plata utilitati:"
+        app:layout_constraintBottom_toTopOf="@+id/logoutBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waterPayTotalMain"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <EditText
+        android:id="@+id/waterCountMonthEditText"
+        android:layout_width="99dp"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:hint="Consum"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <Button
+        android:id="@+id/sendButtonMain"
+        android:layout_width="130dp"
+        android:layout_height="41dp"
+        android:backgroundTint="#208DD6"
+        android:text="Transmite!"
+        app:layout_constraintBottom_toTopOf="@+id/toAssignAppMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waterCountMonthEditText"
+        app:layout_constraintVertical_bias="0.303" />
+
+    <Button
+        android:id="@+id/toCreateButton"
+        android:layout_width="257dp"
+        android:layout_height="43dp"
+        android:text="Creaza un apartament!"
+        app:layout_constraintBottom_toTopOf="@+id/logoutBtn"
+        app:layout_constraintEnd_toStartOf="@+id/sendButtonMain"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waterCountThisMonthMain"
+        app:layout_constraintVertical_bias="0.858" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
